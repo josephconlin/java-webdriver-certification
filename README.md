@@ -9,6 +9,7 @@ Ensure that the driver executables for the browser(s) you intend to use are eith
 ### Prerequisites
 
 Java 8
+
 Appropriate driver executables (chromedriver, geckodriver, IEDriverServer.exe, etc)
 
 ## Running the tests
