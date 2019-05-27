@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stgconsulting</groupId>
+    <artifactId>java-webdriver-certification</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>3.141.59</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.14.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <!-- Set driver executable locations here if not already set via PATH environment variable -->
+                        <!--<webdriver.chrome.driver>C:/tools/Selenium/chromedriver.exe</webdriver.chrome.driver>-->
+                        <!--<webdriver.edge.driver>C:/tools/Selenium/MicrosoftWebDriver.exe</webdriver.edge.driver>-->
+                        <!--<webdriver.gecko.driver>C:/tools/Selenium/geckodriver.exe</webdriver.gecko.driver>-->
+                        <!--<webdriver.ie.driver>C:/tools/Selenium/IEDriverServer.exe</webdriver.ie.driver>-->
+
+                        <!-- Set browser to use or default from Config.java will be used -->
+                        <!--<webdriver.browser>firefox</webdriver.browser>-->
+
+                        <!-- Set grid hub address to use if using a grid -->
+                        <!--<webdriver.hub.address>http://127.0.0.1:4444/wd/hub</webdriver.hub.address>-->
+
+                        <!-- Set URL to use in the tests -->
+                        <app.base.url>https://www.copart.com/</app.base.url>
+                    </systemPropertyVariables>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${project.basedir}/src/test/xml/testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>integration-test</goal>
+                            <goal>verify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
