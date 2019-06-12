@@ -1,6 +1,6 @@
-#Managing WebDriver Browser Driver Binaries
+# Managing WebDriver Browser Driver Binaries
 
-##Overview
+## Overview
 Selenium sends standardized commands that need to be interpreted correctly by each browser. To accomplish this, each
 browser manufacturer provides a binary / executable to receive WebDriver commands and "drive" the browser. Examples
 include chromedriver to control Chrome and geckodriver to control Firefox. These binaries are specific to the operating
@@ -15,7 +15,7 @@ After downloading / extracting the binaries, a small amount of configuration is 
 binaries. Selenium provides for a few different configuration ways to locate these binaries, two of which are discussed
 below. 
 
-##Preferred Method
+## Preferred Method
 Operating systems have the concept of an environment variable called PATH. This environment variable tells the system
 which folders to look in when trying to find an executable file that has been called by name only, without any folder
 path information.
@@ -23,7 +23,7 @@ path information.
 **To use this method, either copy the binaries into a folder that is already part of the PATH environment variable or add
 the folder that contains your downloaded binaries to the PATH environment variable.**
 
-##Secondary Method
+## Secondary Method
 Java allows system properties to be set, and Selenium Java has created system properties that can be set to specify the
 file path and file name of the various binaries.
 
