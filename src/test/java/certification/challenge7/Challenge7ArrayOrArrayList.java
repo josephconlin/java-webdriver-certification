@@ -6,8 +6,8 @@ import com.copart.page.search_results.SearchResults;
 import com.stgconsulting.utility.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import java.util.HashMap;
 import java.util.List;
@@ -38,13 +38,15 @@ public class Challenge7ArrayOrArrayList extends SingleBrowserTest {
         }
 
         //Verify each page linked contains the model name that was the link text
+        SoftAssert softAssert = new SoftAssert();
         linkNamesUrlsMap.forEach((makeModel, url) -> {
             driver.get(url);
-            Assert.assertTrue(SearchResults.build().doesTableContain(makeModel),
+            softAssert.assertTrue(SearchResults.build().doesTableContain(makeModel),
                     "Did not find ["+makeModel+"] on ["+url+"]");
         });
 
-        //Return to starting page
+        //Return to starting page and check soft asserts
         driver.get(currentURL);
+        softAssert.assertAll();
     }
 }

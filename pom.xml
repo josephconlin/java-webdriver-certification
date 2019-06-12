@@ -51,10 +51,10 @@
                 <configuration>
                     <systemPropertyVariables>
                         <!-- Set driver executable locations here if not already set via PATH environment variable -->
-                        <!--<webdriver.chrome.driver>C:/tools/Selenium/chromedriver.exe</webdriver.chrome.driver>-->
-                        <!--<webdriver.edge.driver>C:/tools/Selenium/MicrosoftWebDriver.exe</webdriver.edge.driver>-->
-                        <!--<webdriver.gecko.driver>C:/tools/Selenium/geckodriver.exe</webdriver.gecko.driver>-->
-                        <!--<webdriver.ie.driver>C:/tools/Selenium/IEDriverServer.exe</webdriver.ie.driver>-->
+                        <!--<webdriver.chrome.driver>./bin/chromedriver.exe</webdriver.chrome.driver>-->
+                        <!--<webdriver.edge.driver>./bin/MicrosoftWebDriver.exe</webdriver.edge.driver>-->
+                        <!--<webdriver.gecko.driver>./bin/geckodriver.exe</webdriver.gecko.driver>-->
+                        <!--<webdriver.ie.driver>./bin/IEDriverServer.exe</webdriver.ie.driver>-->
 
                         <!-- Set browser to use or default from Config.java will be used -->
                         <!--<webdriver.browser>firefox</webdriver.browser>-->
